@@ -12,7 +12,7 @@ public class Countries {
 
     public static void main(String[] args) throws Exception {
         readFile("countries.txt");
-        System.out.print("Type a letter: ");
+        System.out.print("Save all countries that begin with the letter: ");
         String entry = consoleScanner.nextLine();
         if (entry.length() != 1) {
             throw new Exception("Input must be a single letter!!!");
