@@ -46,7 +46,7 @@ public class Countries {
     static void writeFile(Character fileName) throws IOException {
         int i = 0;
         for (Country country : countries.get(fileName)) {
-            File f = new File(String.format("%s_countries.txt", fileName));
+            File f = new File(String.format("%s_countries.txt", fileName.toUpperCase(fileName))); //capitalizes the first letter of the file name
             FileWriter fw = new FileWriter(f, true);
             String countryName = countries.get(fileName).get(i).countryName;
             String countryAbbr = countries.get(fileName).get(i).abbreviation;
