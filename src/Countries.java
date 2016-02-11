@@ -48,12 +48,12 @@ public class Countries {
         for (Country country : countries.get(fileName)) {
             File f = new File(String.format("%s_countries.txt", fileName.toUpperCase(fileName))); //capitalizes the first letter of the file name
             FileWriter fw = new FileWriter(f, true);
-            String countryName = countries.get(fileName).get(i).countryName;
-            String countryAbbr = countries.get(fileName).get(i).abbreviation;
-            String fileContent = String.format("%s|%s\n", countryAbbr, countryName);
-            fw.append(fileContent);
-            fw.close();
-            i++;
+            String countryName = countries.get(fileName).get(i).countryName;    //did these in temp variables to
+            String countryAbbr = countries.get(fileName).get(i).abbreviation;   //make fileContent String less ugly
+            String fileContent = String.format("%s|%s\n", countryAbbr, countryName);//created this string in method
+            fw.append(fileContent);                                                 //so i wouldn't have to pass in
+            fw.close();                                                             //an enormous String.format as
+            i++;                                                                    //a fileContent argument
         }
     }
 }
