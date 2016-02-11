@@ -12,13 +12,21 @@ public class Countries {
 
     public static void main(String[] args) throws Exception {
         readFile("countries.txt");
-        System.out.print("Save all countries that begin with the letter: ");
-        String entry = consoleScanner.nextLine();
-        if (entry.length() != 1) {
-            throw new Exception("Input must be a single letter!!!");
+
+        while (true) {
+            System.out.print("Save all countries that begin with the letter: ");
+            String entry = consoleScanner.nextLine();
+            if (entry.length() != 1) throw new Exception("Input must be a single letter!!!");
+            char firstLetter = entry.charAt(0);
+            try {
+                writeFile(firstLetter);
+                break;
+            }
+            catch (Exception e) {
+                System.out.printf("No countries beginning with %s exist.\n", firstLetter);
+
+            }
         }
-        char firstLetter = entry.charAt(0);
-        writeFile(firstLetter);
     }
 
 //Read/Write methods below
