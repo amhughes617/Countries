@@ -1,0 +1,5 @@
+VU|vanuatu
+VE|venezuela
+VN|viet nam
+VG|virgin islands, british
+VI|virgin islands, u.s.
