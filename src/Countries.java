@@ -17,7 +17,6 @@ public class Countries {
         if (entry.length() != 1) {
             throw new Exception("Input must be a single letter!!!");
         }
-
         char firstLetter = entry.charAt(0);
         writeFile(firstLetter);
     }
@@ -37,7 +36,6 @@ public class Countries {
             countries.get(country.countryName.charAt(0)).add(country);
         }
     }
-
     static void writeFile(Character fileName) throws IOException {
         int i = 0;
         for (Country country : countries.get(fileName)) {
