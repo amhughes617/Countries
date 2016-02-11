@@ -24,7 +24,6 @@ public class Countries {
             }
             catch (Exception e) {
                 System.out.printf("No countries beginning with %s exist.\n", firstLetter);
-
             }
         }
     }
