@@ -1,5 +1,3 @@
-import com.sun.tools.internal.ws.wsdl.document.jaxws.Exception;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -12,10 +10,15 @@ public class Countries {
     public static HashMap<Character, ArrayList<Country>> countries = new HashMap<>();
     public static Scanner consoleScanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         readFile("countries.txt");
         System.out.print("Type a letter: ");
-        char firstLetter = (consoleScanner.nextLine()).charAt(0);
+        String entry = consoleScanner.nextLine();
+        if (entry.length() != 1) {
+            throw new Exception("Must be 1 letter");
+        }
+
+        char firstLetter = entry.charAt(0);
         writeFile(firstLetter);
     }
 
