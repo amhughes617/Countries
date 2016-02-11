@@ -8,9 +8,16 @@ import java.util.Scanner;
 
 public class Countries {
     public static HashMap<Character, ArrayList<Country>> countries = new HashMap<>();
-    public static void main(String[] args) throws FileNotFoundException {
+    public static Scanner consoleScanner = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
         readFile("countries.txt");
-
+        System.out.print("Type a letter: ");
+        char firstLetter = (consoleScanner.nextLine()).charAt(0);
+        int i = 0;
+        for (Country country : countries.get(firstLetter)) {
+            writeFile(String.format("%s_countries", firstLetter), countries.get(firstLetter).get(i).countryName);
+            i++
+        }
 
     }
 
@@ -27,13 +34,12 @@ public class Countries {
             }
             countries.get(country.countryName.charAt(0)).add(country);
         }
-        System.out.println(countries);
     }
 
     static void writeFile(String fileName, String fileContent) throws IOException {
         File f = new File(fileName);
         FileWriter fw = new FileWriter(f);
-        fw.write(fileContent);
+        fw.append(fileContent);
         fw.close();
     }
 }
