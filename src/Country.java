@@ -25,4 +25,12 @@ public class Country {
     public void setAbbreviation(String abbreviation) {
         this.abbreviation = abbreviation;
     }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "countryName='" + countryName + '\'' +
+                ", abbreviation='" + abbreviation + '\'' +
+                '}';
+    }
 }

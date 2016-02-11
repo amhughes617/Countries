@@ -1,3 +1,5 @@
+import com.sun.tools.internal.ws.wsdl.document.jaxws.Exception;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -9,18 +11,15 @@ import java.util.Scanner;
 public class Countries {
     public static HashMap<Character, ArrayList<Country>> countries = new HashMap<>();
     public static Scanner consoleScanner = new Scanner(System.in);
+
     public static void main(String[] args) throws IOException {
         readFile("countries.txt");
         System.out.print("Type a letter: ");
         char firstLetter = (consoleScanner.nextLine()).charAt(0);
-        int i = 0;
-        for (Country country : countries.get(firstLetter)) {
-            writeFile(String.format("%s_countries", firstLetter), countries.get(firstLetter).get(i).countryName);
-            i++
-        }
-
+        writeFile(firstLetter);
     }
 
+//Read/Write methods below
 
     static void readFile(String fileName) throws FileNotFoundException {
         File f = new File(fileName);
@@ -36,10 +35,18 @@ public class Countries {
         }
     }
 
-    static void writeFile(String fileName, String fileContent) throws IOException {
-        File f = new File(fileName);
-        FileWriter fw = new FileWriter(f);
-        fw.append(fileContent);
-        fw.close();
+    static void writeFile(Character fileName) throws IOException {
+        int i = 0;
+        for (Country country : countries.get(fileName)) {
+            File f = new File(String.format("%s_countries.txt", fileName));
+            FileWriter fw = new FileWriter(f, true);
+            String countryName = countries.get(fileName).get(i).countryName;
+            String countryAbbr = countries.get(fileName).get(i).abbreviation;
+            String fileContent = String.format("%s|%s\n", countryAbbr, countryName);
+            fw.append(fileContent);
+            fw.close();
+            i++;
+        }
     }
 }
+
