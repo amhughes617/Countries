@@ -15,7 +15,7 @@ public class Countries {
         System.out.print("Type a letter: ");
         String entry = consoleScanner.nextLine();
         if (entry.length() != 1) {
-            throw new Exception("Must be 1 letter");
+            throw new Exception("Input must be a single letter!!!");
         }
 
         char firstLetter = entry.charAt(0);
