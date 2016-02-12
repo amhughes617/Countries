@@ -1,0 +1,8 @@
+FK|falkland islands (malvinas)
+FO|faroe islands
+FJ|fiji
+FI|finland
+FR|france
+GF|french guiana
+PF|french polynesia
+TF|french southern territories
