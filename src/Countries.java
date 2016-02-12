@@ -1,5 +1,4 @@
 import jodd.json.JsonSerializer;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -61,7 +60,6 @@ public class Countries {
     }
 
     static void writeJson(Character fileName) throws IOException { //writes a separate json file
-        int i = 0;
         for (Country country : countries.get(fileName)) {
             File f = new File(String.format("%s_countries.json", fileName.toUpperCase(fileName)));
             JsonSerializer serializer = new JsonSerializer();
