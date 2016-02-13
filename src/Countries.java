@@ -16,7 +16,7 @@ public class Countries {
 
         while (true) {
             System.out.print("Save all countries that begin with the letter: ");
-            String entry = consoleScanner.nextLine();
+            String entry = consoleScanner.nextLine().toLowerCase();
             if (entry.length() != 1) throw new Exception("Input must be a single letter!!!");
             char firstLetter = entry.charAt(0);
             try {
@@ -55,18 +55,16 @@ public class Countries {
             String fileContent = String.format("%s|%s\n", countryAbbr, countryName);//created this string in method
             fw.append(fileContent);                                                 //so i wouldn't have to pass in
             fw.close();                                                             //an enormous String.format as
-            i++;                                                                    //a fileContent argument
+            i++;
+            //a fileContent argument
         }
     }
-
     static void writeJson(Character fileName) throws IOException { //writes a separate json file
-        for (Country country : countries.get(fileName)) {
             File f = new File(String.format("%s_countries.json", fileName.toUpperCase(fileName)));
             JsonSerializer serializer = new JsonSerializer();
             String json = serializer.include("*").serialize(countries.get(fileName));
             FileWriter fw = new FileWriter(f);
             fw.write(json);
             fw.close();
-        }
     }
 }

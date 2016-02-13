@@ -1,0 +1,29 @@
+SH|saint helena
+KN|saint kitts and nevis
+LC|saint lucia
+PM|saint pierre and miquelon
+VC|saint vincent and the grenadines
+WS|samoa
+SM|san marino
+ST|sao tome and principe
+SA|saudi arabia
+SN|senegal
+RS|serbia
+SC|seychelles
+SL|sierra leone
+SG|singapore
+SK|slovakia
+SI|slovenia
+SB|solomon islands
+SO|somalia
+ZA|south africa
+GS|south georgia and the south sandwich islands
+ES|spain
+LK|sri lanka
+SD|sudan
+SR|suriname
+SJ|svalbard and jan mayen
+SZ|swaziland
+SE|sweden
+CH|switzerland
+SY|syrian arab republic
