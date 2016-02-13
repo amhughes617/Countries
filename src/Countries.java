@@ -55,8 +55,7 @@ public class Countries {
             String fileContent = String.format("%s|%s\n", countryAbbr, countryName);//created this string in method
             fw.append(fileContent);                                                 //so i wouldn't have to pass in
             fw.close();                                                             //an enormous String.format as
-            i++;
-            //a fileContent argument
+            i++;                                                                    //a fileContent argument
         }
     }
     static void writeJson(Character fileName) throws IOException { //writes a separate json file
